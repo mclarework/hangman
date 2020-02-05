@@ -211,6 +211,14 @@ body {
     border-color: black;
 }
 
+#gameOver {
+    display: none;
+    font-size: xx-large;
+    text-shadow: 2px 2px 5px white;
+    margin-bottom: 100px;
+    text-align: center;
+}
+
 #resetButton {
     display: flex;
     height: 30px;

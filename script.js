@@ -1,37 +1,20 @@
-const words = ["POTATO","KITTEN","YOU","NIGHT","KING","QUEEN","TRUMP","SHARK","LAPTOP"]
+const words = ["SENSUALITY","CAT","POTATO","QUEEN","LONGITUDE","CARPET","LONGING","TREE","ARREST","BROTHER","PUB","RELATION","SQUIRREL"]
 const challenge = () => {
     task = words[Math.floor(Math.random() *words.length)];
 }
 let task
 window.onload = challenge()
 let failures = 0
+let success = 0
+let wordArea = document.getElementById("wordArea")
+let alphabet = document.getElementsByClassName("button")
+let gameOver = document.getElementById("gameOver")
 
-let a = document.getElementsByClassName("button")[0]
-let b = document.getElementsByClassName("button")[1]
-let c = document.getElementsByClassName("button")[2]
-let d = document.getElementsByClassName("button")[3]
-let e = document.getElementsByClassName("button")[4]
-let f = document.getElementsByClassName("button")[5]
-let g = document.getElementsByClassName("button")[6]
-let h = document.getElementsByClassName("button")[7]
-let letterI = document.getElementsByClassName("button")[8]
-let j = document.getElementsByClassName("button")[9]
-let k = document.getElementsByClassName("button")[10]
-let l = document.getElementsByClassName("button")[11]
-let m = document.getElementsByClassName("button")[12]
-let n = document.getElementsByClassName("button")[13]
-let o = document.getElementsByClassName("button")[14]
-let p = document.getElementsByClassName("button")[15]
-let q = document.getElementsByClassName("button")[16]
-let r = document.getElementsByClassName("button")[17]
-let s = document.getElementsByClassName("button")[18]
-let t = document.getElementsByClassName("button")[19]
-let u = document.getElementsByClassName("button")[20]
-let v = document.getElementsByClassName("button")[21]
-let w = document.getElementsByClassName("button")[22]
-let x = document.getElementsByClassName("button")[23]
-let y = document.getElementsByClassName("button")[24]
-let z = document.getElementsByClassName("button")[25]
+for (i = 0; i < 25; i++ ) {
+    alphabet[i].disabled = "true"
+}
+
+let rows = document.getElementsByClassName("row")
 
 let gameLetters = document.getElementsByClassName("word")
 
@@ -47,6 +30,9 @@ document.addEventListener("click",(event)=> {
         for (i = 0; i < task.length; i++) {
             gameLetters[i].style.display = "inline"
         }
+        for (i = 0; i < 25; i++ ) {
+            alphabet[i].disabled = ""
+        }
     }
 })
 
@@ -54,368 +40,446 @@ document.addEventListener("click",(event)=> {
     let taskArray = task.split("")
     let helper = []
     switch (true) {
-        case event.target == a:
-            for (i = 0; i < taskArray.length; i++)
+        case event.target == alphabet[0]:
+            for (i = 0; i < taskArray.length; i++) {
                 if (taskArray[i] == "A") {
                     helper.push(i)
+                    success++
                     gameLetters[i].textContent = "A"
-                    a.style.backgroundColor = "blue"
-                    a.style.color = "white"
+                    alphabet[0].style.backgroundColor = "blue"
+                    alphabet[0].style.color = "white"
+                    alphabet[0].disabled = "true"
                 }
-                if (helper.length == 0) {
-                    failures++
-                    a.style.backgroundColor = "red"
-                    a.style.color = "white"
+            }
+            if (helper.length == 0) {
+                failures++
+                alphabet[0].style.backgroundColor = "red"
+                alphabet[0].style.color = "white"
+                alphabet[0].disabled = "true"
+            }
+            break
+        case event.target == alphabet[1]:
+            for (i = 0; i < taskArray.length; i++) {
+                if (taskArray[i] == "B") {
+                    helper.push(i)
+                    success++
+                    gameLetters[i].textContent = "B"
+                    alphabet[1].style.backgroundColor = "blue"
+                    alphabet[1].style.color = "white"
                 }
-            break
-        case event.target == b:
-            for (i = 0; i < taskArray.length; i++)
-            if (taskArray[i] == "B") {
-                helper.push(i)
-                gameLetters[i].textContent = "B"
-                b.style.backgroundColor = "blue"
-                a.style.color = "white"
             }
             if (helper.length == 0) {
                 failures++
-                b.style.backgroundColor = "red"
-                b.style.color = "white"
+                alphabet[1].style.backgroundColor = "red"
+                alphabet[1].style.color = "white"
+                alphabet[1].disabled = "true"
             }
             break
-        case event.target == c:
-            for (i = 0; i < taskArray.length; i++)
-            if (taskArray[i] == "C") {
-                helper.push(i)
-                gameLetters[i].textContent = "C"
-                c.style.backgroundColor = "blue"
-                c.style.color = "white"
+        case event.target == alphabet[2]:
+            for (i = 0; i < taskArray.length; i++) {
+                if (taskArray[i] == "C") {
+                    helper.push(i)
+                    success++
+                    gameLetters[i].textContent = "C"
+                    alphabet[2].style.backgroundColor = "blue"
+                    alphabet[2].style.color = "white"
+                }
             }
             if (helper.length == 0) {
                 failures++
-                c.style.backgroundColor = "red"
-                c.style.color = "white"
+                alphabet[2].style.backgroundColor = "red"
+                alphabet[2].style.color = "white"
+                alphabet[2].disabled = "true"
             }
             break
-        case event.target == d:
-            for (i = 0; i < taskArray.length; i++)
-            if (taskArray[i] == "D") {
-                helper.push(i)
-                gameLetters[i].textContent = "D"
-                d.style.backgroundColor = "blue"
-                d.style.color = "white"
+        case event.target == alphabet[3]:
+            for (i = 0; i < taskArray.length; i++) {
+                if (taskArray[i] == "D") {
+                    helper.push(i)
+                    success++
+                    gameLetters[i].textContent = "D"
+                    alphabet[3].style.backgroundColor = "blue"
+                    alphabet[3].style.color = "white"
+                }
             }
             if (helper.length == 0) {
                 failures++
-                d.style.backgroundColor = "red"
-                d.style.color = "white"
+                alphabet[3].style.backgroundColor = "red"
+                alphabet[3].style.color = "white"
+                alphabet[3].disabled = "true"
             }
             break
-        case event.target == e:
-            for (i = 0; i < taskArray.length; i++)
-            if (taskArray[i] == "E") {
-                helper.push(i)
-                gameLetters[i].textContent = "E"
-                e.style.backgroundColor = "blue"
-                e.style.color = "white"
+        case event.target == alphabet[4]:
+            for (i = 0; i < taskArray.length; i++) {
+                if (taskArray[i] == "E") {
+                    helper.push(i)
+                    success++
+                    gameLetters[i].textContent = "E"
+                    alphabet[4].style.backgroundColor = "blue"
+                    alphabet[4].style.color = "white"
+                }
             }
             if (helper.length == 0) {
                 failures++
-                e.style.backgroundColor = "red"
-                e.style.color = "white"
+                alphabet[4].style.backgroundColor = "red"
+                alphabet[4].style.color = "white"
+                alphabet[4].disabled = "true"
             }
             break
-        case event.target == f:
-            for (i = 0; i < taskArray.length; i++)
-            if (taskArray[i] == "F") {
-                helper.push(i)
-                gameLetters[i].textContent = "F"
-                f.style.backgroundColor = "blue"
-                f.style.color = "white"
+        case event.target == alphabet[5]:
+            for (i = 0; i < taskArray.length; i++) {
+                if (taskArray[i] == "F") {
+                    helper.push(i)
+                    success++
+                    gameLetters[i].textContent = "F"
+                    alphabet[5].style.backgroundColor = "blue"
+                    alphabet[5].style.color = "white"
+                }
             }
             if (helper.length == 0) {
                 failures++
-                f.style.backgroundColor = "red"
-                f.style.color = "white"
+                alphabet[5].style.backgroundColor = "red"
+                alphabet[5].style.color = "white"
+                alphabet[5].disabled = "true"
             }
             break
-        case event.target == g:
-            for (i = 0; i < taskArray.length; i++)
-            if (taskArray[i] == "G") {
-                helper.push(i)
-                gameLetters[i].textContent = "G"
-                g.style.backgroundColor = "blue"
-                g.style.color = "white"
+        case event.target == alphabet[6]:
+            for (i = 0; i < taskArray.length; i++) {
+                if (taskArray[i] == "G") {
+                    helper.push(i)
+                    success++
+                    gameLetters[i].textContent = "G"
+                    alphabet[6].style.backgroundColor = "blue"
+                    alphabet[6].style.color = "white"
+                }
             }
             if (helper.length == 0) {
                 failures++
-                g.style.backgroundColor = "red"
-                g.style.color = "white"
+                alphabet[6].style.backgroundColor = "red"
+                alphabet[6].style.color = "white"
+                alphabet[6].disabled = "true"
             }
             break
-        case event.target == h:
-            for (i = 0; i < taskArray.length; i++)
-            if (taskArray[i] == "H") {
-                helper.push(i)
-                gameLetters[i].textContent = "H"
-                h.style.backgroundColor = "blue"
-                h.style.color = "white"
+        case event.target == alphabet[7]:
+            for (i = 0; i < taskArray.length; i++) {
+                if (taskArray[i] == "H") {
+                    helper.push(i)
+                    success++
+                    gameLetters[i].textContent = "H"
+                    alphabet[7].style.backgroundColor = "blue"
+                    alphabet[7].style.color = "white"
+                }
             }
             if (helper.length == 0) {
                 failures++
-                h.style.backgroundColor = "red"
-                h.style.color = "white"
+                alphabet[7].style.backgroundColor = "red"
+                alphabet[7].style.color = "white"
+                alphabet[7].disabled = "true"
             }
             break
-        case event.target == letterI:
-            for (i = 0; i < taskArray.length; i++)
-            if (taskArray[i] == "I") {
-                helper.push(i)
-                gameLetters[i].textContent = "I"
-                letterI.style.backgroundColor = "blue"
-                letterI.style.color = "white"
+        case event.target == alphabet[8]:
+            for (i = 0; i < taskArray.length; i++) {
+                if (taskArray[i] == "I") {
+                    helper.push(i)
+                    success++
+                    gameLetters[i].textContent = "I"
+                    alphabet[8].style.backgroundColor = "blue"
+                    alphabet[8].style.color = "white"
+                }
             }
             if (helper.length == 0) {
                 failures++
-                letterI.style.backgroundColor = "red"
-                letterI.style.color = "white"
+                alphabet[8].style.backgroundColor = "red"
+                alphabet[8].style.color = "white"
+                alphabet[8].disabled = "true"
             }
             break
-        case event.target == j:
-            for (i = 0; i < taskArray.length; i++)
-            if (taskArray[i] == "J") {
-                helper.push(i)
-                gameLetters[i].textContent = "J"
-                j.style.backgroundColor = "blue"
-                j.style.color = "white"
+        case event.target == alphabet[9]:
+            for (i = 0; i < taskArray.length; i++) {
+                if (taskArray[i] == "J") {
+                    helper.push(i)
+                    success++
+                    gameLetters[i].textContent = "J"
+                    alphabet[9].style.backgroundColor = "blue"
+                    alphabet[9].style.color = "white"
+                }
             }
             if (helper.length == 0) {
                 failures++
-                j.style.backgroundColor = "red"
-                j.style.color = "white"
+                alphabet[9].style.backgroundColor = "red"
+                alphabet[9].style.color = "white"
+                alphabet[9].disabled = "true"
             }
             break
-        case event.target == k:
-            for (i = 0; i < taskArray.length; i++)
-            if (taskArray[i] == "K") {
-                helper.push(i)
-                gameLetters[i].textContent = "K"
-                k.style.backgroundColor = "blue"
-                k.style.color = "white"
+        case event.target == alphabet[10]:
+            for (i = 0; i < taskArray.length; i++) {
+                if (taskArray[i] == "K") {
+                    helper.push(i)
+                    success++
+                    gameLetters[i].textContent = "K"
+                    alphabet[10].style.backgroundColor = "blue"
+                    alphabet[10].style.color = "white"
+                }
             }
             if (helper.length == 0) {
                 failures++
-                k.style.backgroundColor = "red"
-                k.style.color = "white"
+                alphabet[10].style.backgroundColor = "red"
+                alphabet[10].style.color = "white"
+                alphabet[10].disabled = "true"
             }
             break
-        case event.target == l:
-            for (i = 0; i < taskArray.length; i++)
-            if (taskArray[i] == "L") {
-                helper.push(i)
-                gameLetters[i].textContent = "L"
-                l.style.backgroundColor = "blue"
-                l.style.color = "white"
+        case event.target == alphabet[11]:
+            for (i = 0; i < taskArray.length; i++) {
+                if (taskArray[i] == "L") {
+                    helper.push(i)
+                    success++
+                    gameLetters[i].textContent = "L"
+                    alphabet[11].style.backgroundColor = "blue"
+                    alphabet[11].style.color = "white"
+                }
             }
             if (helper.length == 0) {
                 failures++
-                l.style.backgroundColor = "red"
-                l.style.color = "white"
+                alphabet[11].style.backgroundColor = "red"
+                alphabet[11].style.color = "white"
+                alphabet[11].disabled = "true"
             }
             break
-        case event.target == m:
-            for (i = 0; i < taskArray.length; i++)
-            if (taskArray[i] == "M") {
-                helper.push(i)
-                gameLetters[i].textContent = "M"
-                m.style.backgroundColor = "blue"
-                m.style.color = "white"
+        case event.target == alphabet[12]:
+            for (i = 0; i < taskArray.length; i++) {
+                if (taskArray[i] == "M") {
+                    helper.push(i)
+                    success++
+                    gameLetters[i].textContent = "M"
+                    alphabet[12].style.backgroundColor = "blue"
+                    alphabet[12].style.color = "white"
+                }
             }
             if (helper.length == 0) {
                 failures++
-                m.style.backgroundColor = "red"
-                m.style.color = "white"
+                alphabet[12].style.backgroundColor = "red"
+                alphabet[12].style.color = "white"
+                alphabet[12].disabled = "true"
             }
             break
-        case event.target == n:
-            for (i = 0; i < taskArray.length; i++)
-            if (taskArray[i] == "N") {
-                helper.push(i)
-                gameLetters[i].textContent = "N"
-                n.style.backgroundColor = "blue"
-                n.style.color = "white"
+        case event.target == alphabet[13]:
+            for (i = 0; i < taskArray.length; i++) {
+                if (taskArray[i] == "N") {
+                    helper.push(i)
+                    success++
+                    gameLetters[i].textContent = "N"
+                    alphabet[13].style.backgroundColor = "blue"
+                    alphabet[13].style.color = "white"
+                }
             }
             if (helper.length == 0) {
                 failures++
-                n.style.backgroundColor = "red"
-                n.style.color = "white"
+                alphabet[13].style.backgroundColor = "red"
+                alphabet[13].style.color = "white"
+                alphabet[13].disabled = "true"
             }
             break
-        case event.target == o:
-            for (i = 0; i < taskArray.length; i++)
-            if (taskArray[i] == "O") {
-                helper.push(i)
-                gameLetters[i].textContent = "O"
-                o.style.backgroundColor = "blue"
-                o.style.color = "white"
+        case event.target == alphabet[14]:
+            for (i = 0; i < taskArray.length; i++) {
+                if (taskArray[i] == "O") {
+                    helper.push(i)
+                    success++
+                    gameLetters[i].textContent = "O"
+                    alphabet[14].style.backgroundColor = "blue"
+                    alphabet[14].style.color = "white"
+                }
             }
             if (helper.length == 0) {
                 failures++
-                o.style.backgroundColor = "red"
-                o.style.color = "white"
+                alphabet[14].style.backgroundColor = "red"
+                alphabet[14].style.color = "white"
+                alphabet[14].disabled = "true"
             }
             break
-        case event.target == p:
-            for (i = 0; i < taskArray.length; i++)
-            if (taskArray[i] == "P") {
-                helper.push(i)
-                gameLetters[i].textContent = "P"
-                p.style.backgroundColor = "blue"
-                p.style.color = "white"
+        case event.target == alphabet[15]:
+            for (i = 0; i < taskArray.length; i++) {
+                if (taskArray[i] == "P") {
+                    helper.push(i)
+                    success++
+                    gameLetters[i].textContent = "P"
+                    alphabet[15].style.backgroundColor = "blue"
+                    alphabet[15].style.color = "white"
+                }
             }
             if (helper.length == 0) {
                 failures++
-                p.style.backgroundColor = "red"
-                p.style.color = "white"
+                alphabet[15].style.backgroundColor = "red"
+                alphabet[15].style.color = "white"
+                alphabet[15].disabled = "true"
             }
             break
-        case event.target == q:
-            for (i = 0; i < taskArray.length; i++)
-            if (taskArray[i] == "Q") {
-                helper.push(i)
-                gameLetters[i].textContent = "Q"
-                q.style.backgroundColor = "blue"
-                q.style.color = "white"
+        case event.target == alphabet[16]:
+            for (i = 0; i < taskArray.length; i++) {
+                if (taskArray[i] == "Q") {
+                    helper.push(i)
+                    gameLetters[i].textContent = "Q"
+                    alphabet[16].style.backgroundColor = "blue"
+                    alphabet[16].style.color = "white"
+                }
             }
             if (helper.length == 0) {
                 failures++
-                q.style.backgroundColor = "red"
-                q.style.color = "white"
+                alphabet[16].style.backgroundColor = "red"
+                alphabet[16].style.color = "white"
+                alphabet[16].disabled = "true"
             }
             break
-        case event.target == r:
-            for (i = 0; i < taskArray.length; i++)
-            if (taskArray[i] == "R") {
-                helper.push(i)
-                gameLetters[i].textContent = "R"
-                r.style.backgroundColor = "blue"
-                r.style.color = "white"
+        case event.target == alphabet[17]:
+            for (i = 0; i < taskArray.length; i++) {
+                if (taskArray[i] == "R") {
+                    helper.push(i)
+                    success++
+                    gameLetters[i].textContent = "R"
+                    alphabet[17].style.backgroundColor = "blue"
+                    alphabet[17].style.color = "white"
+                }
             }
             if (helper.length == 0) {
                 failures++
-                r.style.backgroundColor = "red"
-                r.style.color = "white"
+                alphabet[17].style.backgroundColor = "red"
+                alphabet[17].style.color = "white"
+                alphabet[17].disabled = "true"
             }
             break
-        case event.target == s:
-            for (i = 0; i < taskArray.length; i++)
-            if (taskArray[i] == "S") {
-                helper.push(i)
-                gameLetters[i].textContent = "S"
-                s.style.backgroundColor = "blue"
-                s.style.color = "white"
+        case event.target == alphabet[18]:
+            for (i = 0; i < taskArray.length; i++) {
+                if (taskArray[i] == "S") {
+                    helper.push(i)
+                    success++
+                    gameLetters[i].textContent = "S"
+                    alphabet[18].style.backgroundColor = "blue"
+                    alphabet[18].style.color = "white"
+                }
             }
             if (helper.length == 0) {
                 failures++
-                s.style.backgroundColor = "red"
-                s.style.color = "white"
+                alphabet[18].style.backgroundColor = "red"
+                alphabet[18].style.color = "white"
+                alphabet[18].disabled = "true"
             }
             break
-        case event.target == t:
-            for (i = 0; i < taskArray.length; i++)
-            if (taskArray[i] == "T") {
-                helper.push(i)
-                gameLetters[i].textContent = "T"
-                t.style.backgroundColor = "blue"
-                t.style.color = "white"
+        case event.target == alphabet[19]:
+            for (i = 0; i < taskArray.length; i++) {
+                if (taskArray[i] == "T") {
+                    helper.push(i)
+                    success++
+                    gameLetters[i].textContent = "T"
+                    alphabet[19].style.backgroundColor = "blue"
+                    alphabet[19].style.color = "white"
+                }
             }
             if (helper.length == 0) {
                 failures++
-                t.style.backgroundColor = "red"
-                t.style.color = "white"
+                alphabet[19].style.backgroundColor = "red"
+                alphabet[19].style.color = "white"
+                alphabet[19].disabled = "true"
             }
             break
-        case event.target == u:
-            for (i = 0; i < taskArray.length; i++)
-            if (taskArray[i] == "U") {
-                helper.push(i)
-                gameLetters[i].textContent = "U"
-                u.style.backgroundColor = "blue"
-                u.style.color = "white"
+        case event.target == alphabet[20]:
+            for (i = 0; i < taskArray.length; i++) {
+                if (taskArray[i] == "U") {
+                    helper.push(i)
+                    success++
+                    gameLetters[i].textContent = "U"
+                    alphabet[20].style.backgroundColor = "blue"
+                    alphabet[20].style.color = "white"
+                }
             }
             if (helper.length == 0) {
                 failures++
-                u.style.backgroundColor = "red"
-                u.style.color = "white"
+                alphabet[20].style.backgroundColor = "red"
+                alphabet[20].style.color = "white"
+                alphabet[20].disabled = "true"
             }
             break
-        case event.target == v:
-            for (i = 0; i < taskArray.length; i++)
-            if (taskArray[i] == "V") {
-                helper.push(i)
-                gameLetters[i].textContent = "V"
-                v.style.backgroundColor = "blue"
-                v.style.color = "white"
+        case event.target == alphabet[21]:
+            for (i = 0; i < taskArray.length; i++) {
+                if (taskArray[i] == "V") {
+                    helper.push(i)
+                    success++
+                    gameLetters[i].textContent = "V"
+                    alphabet[21].style.backgroundColor = "blue"
+                    alphabet[21].style.color = "white"
+                }
             }
             if (helper.length == 0) {
                 failures++
-                v.style.backgroundColor = "red"
-                v.style.color = "white"
+                alphabet[21].style.backgroundColor = "red"
+                alphabet[21].style.color = "white"
+                alphabet[21].disabled = "true"
             }
             break
-        case event.target == w:
-            for (i = 0; i < taskArray.length; i++)
-            if (taskArray[i] == "W") {
-                helper.push(i)
-                gameLetters[i].textContent = "W"
-                w.style.backgroundColor = "blue"
-                w.style.color = "white"
+        case event.target == alphabet[22]:
+            for (i = 0; i < taskArray.length; i++) {
+                if (taskArray[i] == "W") {
+                    helper.push(i)
+                    success++
+                    gameLetters[i].textContent = "W"
+                    alphabet[22].style.backgroundColor = "blue"
+                    alphabet[22].style.color = "white"
+                }
             }
             if (helper.length == 0) {
                 failures++
-                w.style.backgroundColor = "red"
-                w.style.color = "white"
+                alphabet[22].style.backgroundColor = "red"
+                alphabet[22].style.color = "white"
+                alphabet[22].disabled = "true"
             }
             break
-        case event.target == x:
-            for (i = 0; i < taskArray.length; i++)
-            if (taskArray[i] == "X") {
-                helper.push(i)
-                gameLetters[i].textContent = "X"
-                x.style.backgroundColor = "blue"
-                x.style.color = "white"
+        case event.target == alphabet[23]:
+            for (i = 0; i < taskArray.length; i++) {
+                if (taskArray[i] == "X") {
+                    helper.push(i)
+                    success++
+                    gameLetters[i].textContent = "X"
+                    alphabet[23].style.backgroundColor = "blue"
+                    alphabet[23].style.color = "white"
+                }
             }
             if (helper.length == 0) {
                 failures++
-                x.style.backgroundColor = "red"
-                x.style.color = "white"
+                alphabet[23].style.backgroundColor = "red"
+                alphabet[23].style.color = "white"
+                alphabet[23].disabled = "true"
             }
             break
-        case event.target == y:
-            for (i = 0; i < taskArray.length; i++)
-            if (taskArray[i] == "Y") {
-                helper.push(i)
-                gameLetters[i].textContent = "Y"
-                y.style.backgroundColor = "blue"
-                y.style.color = "white"
+        case event.target == alphabet[24]:
+            for (i = 0; i < taskArray.length; i++) {
+                if (taskArray[i] == "Y") {
+                    helper.push(i)
+                    success++
+                    gameLetters[i].textContent = "Y"
+                    alphabet[24].style.backgroundColor = "blue"
+                    alphabet[24].style.color = "white"
+                }
             }
             if (helper.length == 0) {
                 failures++
-                y.style.backgroundColor = "red"
-                y.style.color = "white"
+                alphabet[24].style.backgroundColor = "red"
+                alphabet[24].style.color = "white"
+                alphabet[24].disabled = "true"
             }
             break
-        case event.target == z:
-            for (i = 0; i < taskArray.length; i++)
-            if (taskArray[i] == "Z") {
-                helper.push(i)
-                gameLetters[i].textContent = "Z"
-                z.style.backgroundColor = "blue"
-                z.style.color = "white"
+        case event.target == alphabet[25]:
+            for (i = 0; i < taskArray.length; i++) {
+                if (taskArray[i] == "Z") {
+                    helper.push(i)
+                    success++
+                    gameLetters[i].textContent = "Z"
+                    alphabet[25].style.backgroundColor = "blue"
+                    alphabet[25].style.color = "white"
+                }
             }
             if (helper.length == 0) {
                 failures++
-                z.style.backgroundColor = "red"
-                z.style.color = "white"
+                alphabet[25].style.backgroundColor = "red"
+                alphabet[25].style.color = "white"
+                alphabet[25].disabled = "true"
             }
             break
     }
@@ -423,7 +487,19 @@ document.addEventListener("click",(event)=> {
         penalty[i].style.display = "inline"
     }
     if (failures >=5) {
-        console.log("Game Over")
+        for (i = 0; i < rows.length; i++) {
+            rows[i].style.display = "none"
+        }
+        wordArea.style.display = "none"
+        gameOver.style.display = "flex"
+        gameOver.textContent = "Commiserations, you loose."
+    }
+    if (success >= taskArray.length) {
+        for (i = 0; i < rows.length; i++) {
+            rows[i].style.display = "none"
+        }
+        gameOver.style.display = "flex"
+        gameOver.textContent = "Congratulations, you win."
     }
 })
 
