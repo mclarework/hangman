@@ -176,7 +176,8 @@ body {
     justify-content: space-around;
 }
 
-.letter {
+
+.button {
     display: flex;
     height: 30px;
     width: 30px;
