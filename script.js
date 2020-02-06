@@ -317,6 +317,7 @@ document.addEventListener("click",(event)=> {
             for (i = 0; i < taskArray.length; i++) {
                 if (taskArray[i] == "Q") {
                     helper.push(i)
+                    success++
                     gameLetters[i].textContent = "Q"
                     alphabet[16].style.backgroundColor = "blue"
                     alphabet[16].style.color = "white"
@@ -490,7 +491,9 @@ document.addEventListener("click",(event)=> {
         for (i = 0; i < rows.length; i++) {
             rows[i].style.display = "none"
         }
-        wordArea.style.display = "none"
+        for (i = 0; i < taskArray.length; i++) {
+            gameLetters[i].textContent = taskArray[i]
+        }
         gameOver.style.display = "flex"
         gameOver.textContent = "Commiserations, you loose."
     }
